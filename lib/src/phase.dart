@@ -11,7 +11,8 @@ Phase bootstrapPhase(String projectName, String configFile) {
 }
 
 PhaseGroup phaseGroup({String configFileName: jaguarSerializerConfigFile}) {
-  JaguarSerializerConfig config = new JaguarSerializerConfig(configFileName: configFileName);
+  JaguarSerializerConfig config =
+      new JaguarSerializerConfig(configFileName: configFileName);
   if (config.pubspec.projectName == null) {
     throw "Could not find the project name";
   }
@@ -21,6 +22,7 @@ PhaseGroup phaseGroup({String configFileName: jaguarSerializerConfigFile}) {
   }
 
   PhaseGroup group = new PhaseGroup();
-  group.addPhase(bootstrapPhase(config.pubspec.projectName, jaguarSerializerConfigFile));
+  group.addPhase(
+      bootstrapPhase(config.pubspec.projectName, jaguarSerializerConfigFile));
   return group;
 }

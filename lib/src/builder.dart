@@ -72,19 +72,21 @@ class SerializerBootstrapBuilder extends Builder {
       _bootstrapLib(buildStep, importsLib, constructorsLib);
     }
     if (constructorsAll.isNotEmpty) {
-      _bootstrapAll(buildStep, importsAll, constructorsAll, constructorsLib.isNotEmpty);
+      _bootstrapAll(
+          buildStep, importsAll, constructorsAll, constructorsLib.isNotEmpty);
     }
   }
 
-  void _bootstrapAll(
-      BuildStep buildStep, List<String> imports, List<String> constructors, bool withLib) {
+  void _bootstrapAll(BuildStep buildStep, List<String> imports,
+      List<String> constructors, bool withLib) {
     StringBuffer buffer = new StringBuffer();
     buffer.writeln(_topHeader);
     buffer.writeln("library $projectName.jaguar.serializer.bootstrap;");
 
     buffer.writeln("import 'package:jaguar_serializer/serializer.dart';");
     if (withLib) {
-      buffer.writeln("import 'package:$projectName/jaguar_serializer.dart' as _lib;");
+      buffer.writeln(
+          "import 'package:$projectName/jaguar_serializer.dart' as _lib;");
     }
 
     imports.forEach((String i) {
@@ -105,8 +107,7 @@ class SerializerBootstrapBuilder extends Builder {
     DartFormatter format = new DartFormatter();
 
     buildStep.writeAsString(new Asset(
-        new AssetId(
-            projectName, "serializer.dart"),
+        new AssetId(projectName, "serializer.dart"),
         format.format(buffer.toString())));
   }
 
