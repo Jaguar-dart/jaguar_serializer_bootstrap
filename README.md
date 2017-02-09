@@ -4,13 +4,7 @@ A library for Dart developers. It is awesome.
 
 ## Usage
 
-A simple usage example:
-
-    import 'package:jaguar_serializer_bootstrap/jaguar_serializer_bootstrap.dart';
-
-    main() {
-      var awesome = new Awesome();
-    }
+`serializer_bootstrap build`
 
 ## Features and bugs
 

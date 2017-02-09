@@ -1,11 +1,14 @@
 name: jaguar_serializer_bootstrap
-description: A starting point for Dart libraries or applications.
+description: Serializer aggregator for jaguar_serializer.
 version: 0.0.1
-#author: lejard_h <email@example.com>
-#homepage: https://www.example.com
-
+authors:
+- Hadrien Lejard <hadrien.lejard@gmail.com>
+homepage: http://jaguar-dart.github.io
 environment:
   sdk: '>=1.0.0 <2.0.0'
+
+executables:
+  serializer_bootstrap:
 
 dependencies:
   source_gen: "^0.5.1"
