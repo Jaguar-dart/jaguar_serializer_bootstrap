@@ -10,17 +10,17 @@ Phase bootstrapPhase(String projectName, String configFile) {
         new InputSet(projectName, [configFile]));
 }
 
-PhaseGroup phaseGroup() {
-  PhaseGroup group = new PhaseGroup();
-
-  if (serializer_config.projectName == null) {
+PhaseGroup phaseGroup({String configFileName: jaguarSerializerConfigFile}) {
+  JaguarSerializerConfig config = new JaguarSerializerConfig(configFileName: configFileName);
+  if (config.pubspec.projectName == null) {
     throw "Could not find the project name";
   }
 
-  if (serializer_config.annotations == null) {
+  if (config.serializers == null) {
     throw "You need to provide one or more api file";
   }
 
-  group.addPhase(bootstrapPhase(serializer_config.projectName, SerializerConfig.config_file));
+  PhaseGroup group = new PhaseGroup();
+  group.addPhase(bootstrapPhase(config.pubspec.projectName, jaguarSerializerConfigFile));
   return group;
 }

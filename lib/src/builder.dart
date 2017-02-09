@@ -23,7 +23,7 @@ class SerializerBootstrapBuilder extends Builder {
   Future build(BuildStep buildStep) async {
     AssetId id = buildStep.input.id;
     Map yaml = loadYaml(await buildStep.readAsString(id));
-    List<String> serializersFile = yaml[SerializerConfig.annotations_key];
+    List<String> serializersFile = yaml[JaguarSerializerConfig.serializersKey];
 
     List<String> importsAll = [];
     List<String> constructorsAll = [];

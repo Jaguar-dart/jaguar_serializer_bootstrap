@@ -23,7 +23,7 @@ dependencies:
   jaguar_serializer:
     git:
       url: https://github.com/lejard-h/jaguar_serializer.git
-      ref: develop
+      ref: master
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
