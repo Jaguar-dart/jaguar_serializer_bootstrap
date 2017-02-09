@@ -1,0 +1,26 @@
+name: jaguar_serializer_bootstrap
+description: A starting point for Dart libraries or applications.
+version: 0.0.1
+#author: lejard_h <email@example.com>
+#homepage: https://www.example.com
+
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+
+dependencies:
+  source_gen: "^0.5.1"
+  build: ">=0.4.1 <0.5.0"
+  yaml: ">=2.1.10 <3.0.0"
+  intl: ">=0.14.0 <0.15.0"
+  yamlicious: ^0.0.5
+  source_gen_help:
+    git:
+      url: https://github.com/Jaguar-dart/source_gen_help.git
+      ref: 4acd8b6
+  jaguar_serializer:
+    git:
+      url: https://github.com/lejard-h/jaguar_serializer.git
+      ref: develop
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'
